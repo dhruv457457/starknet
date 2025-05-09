@@ -1,0 +1,53 @@
+[package]
+name = "VOTE_PROJECT"
+version = "0.1.0"
+edition = "2024_07"
+
+# See more keys and their definitions at https://docs.swmansion.com/scarb/docs/reference/manifest.html
+
+[dependencies]
+openzeppelin = "1.0.0"
+starknet = "2.11.4"
+
+[dev-dependencies]
+snforge_std = "0.41.0"
+assert_macros = "2.11.4"
+
+[[target.starknet-contract]]
+sierra = true
+
+[scripts]
+test = "snforge test"
+
+[tool.scarb]
+allow-prebuilt-plugins = ["snforge_std"]
+
+# Visit https://foundry-rs.github.io/starknet-foundry/appendix/scarb-toml.html for more information
+
+# [tool.snforge]
+# exit_first = true
+# fuzzer_runs = 1234
+# fuzzer_seed = 1111
+
+# [[tool.snforge.fork]]
+# name = "SOME_NAME"
+# url = "http://your.rpc.url"
+# block_id.tag = "latest"
+
+# [[tool.snforge.fork]]
+# name = "SOME_SECOND_NAME"
+# url = "http://your.second.rpc.url"
+# block_id.number = "123"
+
+# [[tool.snforge.fork]]
+# name = "SOME_THIRD_NAME"
+# url = "http://your.third.rpc.url"
+# block_id.hash = "0x123"
+
+# [profile.dev.cairo]
+# unstable-add-statements-code-locations-debug-info = true
+# unstable-add-statements-functions-debug-info = true
+# inlining-strategy = "avoid"
+
+# [features]
+# enable_for_tests = []
